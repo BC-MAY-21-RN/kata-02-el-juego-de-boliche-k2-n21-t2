@@ -24,18 +24,31 @@ class Main {
   }
 
   condicionesDeJuego() {
-    this.frames.map( frame => {
+    this.frames.map( (frame, index) => {
       let lanzamientos = frame.getLanzamientos
-      lanzamientos[0] == 10 ? hicisteChusa() : null
-      lanzamientos[0] + lanzamientos[1] == 10 ? hicisteSpare() : null
+      lanzamientos[0] == 10 ? hicisteChusa(index) : null
+      lanzamientos[0] + lanzamientos[1] == 10 ? hicisteSpare(index) : null
     })
   }
 
-  hicisteChusa(){
-
+  hicisteChusa(index){
+    this.frames[index].newPuntajeConChusa(
+      this.frames[index + 1].lanzamientos[0].getPuntajeActual 
+      +
+      this.frames[index + 1].lanzamientos[1].getPuntajeActual 
+    )     
+    actualizarPuntajes(index + 1)
   }
 
-  hicisteSpare(){
+
+  actualizarPuntajes(index) {
+    for (let i = index; i < this.frames.length; i++) {
+      this.frames[i].puntajeAnterior = this.frames[i-1].getPuntajeActual
+      this.frames[i].actualizarPuntaje()
+    }
+  }
+
+  hicisteSpare(index){
     
   }
   // Aqui debe inizializarse el juego cuando imprimamos en consola

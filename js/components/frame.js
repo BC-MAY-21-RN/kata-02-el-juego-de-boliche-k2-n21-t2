@@ -6,7 +6,6 @@ export default class Frame{
     this.lanzamientos = [];
     this.puntajeActual = 0;
     this.puntajeAnterior = puntajeAnterior
-    this.puntajeFinal = 0;
 
   }
   // Aqui van los metodos
@@ -26,6 +25,15 @@ export default class Frame{
     return this.lanzamientos
   }
 
+  set puntajeAnterior(nuevoPuntaje){
+    this.puntajeAnterior = nuevoPuntaje
+  }
+
+
+  newPuntajeConChusa(puntajeAdicional) {
+    this.puntajeActual += puntajeAdicional
+  }
+
   realizarLanzamientos() {
     let puntajeLanzamiento = 0
     for(let i = 0; i < 2; i++){
@@ -43,6 +51,11 @@ export default class Frame{
       this.puntajeActual +=  lanzamiento.puntajeActual
     }) 
     this.puntajeActual += this.puntajeAnterior
+  }
+
+  actualizarPuntaje(){
+    this.puntajeActual = 0
+    this.obtenerPuntajeActual()
   }
 
 }
