@@ -31,19 +31,34 @@ class Main {
     })
   }
 
+  // Esta funcion recibe el frame al que se le aplicara la chusa
   hicisteChusa(index){
+    // En esta linea mandamos a llamar a la funcion nuevo puntaje con chusa, 
+    // a la cual le mandamos como parametro los puntajes de los siguientes dos 
+    // lanzamientos. La funcionalidad del metodo esta descrita en la clase Frame
     this.frames[index].newPuntajeConChusa(
       this.frames[index + 1].lanzamientos[0].getPuntajeActual 
       +
       this.frames[index + 1].lanzamientos[1].getPuntajeActual 
     )     
+
+    // Le enviamos a actualizar putaje el numero del index mas 1 porque queremos
+    // actualizar los puntajes posteriores al de la chusa, porque el puntaje del 
+    // frame que saco la chusa ya se actualizo
     actualizarPuntajes(index + 1)
   }
 
-
+  // Este metodo atualiza el puntaje de los frames posteriores al frame que hizo
+  // la huza o strike
   actualizarPuntajes(index) {
+    // Con esta linea le indicamos al ciclo que itere los frames posteriores al 
+    // que hizo el strike
     for (let i = index; i < this.frames.length; i++) {
+      // Aqui actualizamos el puntaje anterior de cada uno de los frames para
+      // ir sumando los nuevos puntajes
       this.frames[i].puntajeAnterior = this.frames[i-1].getPuntajeActual
+      // Aqui mandamos a llamar al metodo actualizar puntajes el cual esta 
+      // descrito en la clase frame
       this.frames[i].actualizarPuntaje()
     }
   }

@@ -25,11 +25,14 @@ export default class Frame{
     return this.lanzamientos
   }
 
+  // Este set me ayuda a setear el nuevo puntaje anterior de cada frame
   set puntajeAnterior(nuevoPuntaje){
     this.puntajeAnterior = nuevoPuntaje
   }
 
-
+  // Este metodo recibe el puntaje de los dos siguientes lanzamientos
+  // Suma el puntaje de los dos lanzamientos y depues los suma con el
+  // puntaje actual para sacar el nuevo puntaje de la chuza o strike
   newPuntajeConChusa(puntajeAdicional) {
     this.puntajeActual += puntajeAdicional
   }
@@ -53,6 +56,7 @@ export default class Frame{
     this.puntajeActual += this.puntajeAnterior
   }
 
+  // Esta funcion sirve para refrescar el puntaje actual de cada Frame
   actualizarPuntaje(){
     this.puntajeActual = 0
     this.obtenerPuntajeActual()
