@@ -33,7 +33,7 @@ export default class Frame{
   // Este metodo recibe el puntaje de los dos siguientes lanzamientos
   // Suma el puntaje de los dos lanzamientos y depues los suma con el
   // puntaje actual para sacar el nuevo puntaje de la chuza o strike
-  newPuntajeConChusa(puntajeAdicional) {
+  newPuntajeConBonus(puntajeAdicional) {
     this.puntajeActual += puntajeAdicional
   }
 

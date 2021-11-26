@@ -36,7 +36,7 @@ class Main {
     // En esta linea mandamos a llamar a la funcion nuevo puntaje con chusa, 
     // a la cual le mandamos como parametro los puntajes de los siguientes dos 
     // lanzamientos. La funcionalidad del metodo esta descrita en la clase Frame
-    this.frames[index].newPuntajeConChusa(
+    this.frames[index].newPuntajeConBonus(
       this.frames[index + 1].lanzamientos[0].getPuntajeActual 
       +
       this.frames[index + 1].lanzamientos[1].getPuntajeActual 
@@ -64,9 +64,17 @@ class Main {
   }
 
   hicisteSpare(index){
-    
+    // Le manda el bonus al frame para que actualice el puntaje
+    this.frames[index].newPuntajeConBonus(
+      this.frames[index + 1].lanzamientos[0].getPuntajeActual 
+    )
+
+    // Actualiza los puntajes de los siguientes frames
+    actualizarPuntajes(index + 1)
   }
-  // Aqui debe inizializarse el juego cuando imprimamos en consola
+
+  // YA AGREGA LOS BONUS POR STRIKE Y POR SPARE PERO AUN FALTAN ALGUNAS 
+  // CONDICIONALES
 }
 
 let main = new Main()
