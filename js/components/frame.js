@@ -18,15 +18,14 @@ export default class Frame{
   }
 
   get getPuntajeActual() {
-    return this.puntajeActual = 0
+    return this.puntajeActual
   }
 
   get getLanzamientos() {
     return this.lanzamientos
   }
 
-  // Este set me ayuda a setear el nuevo puntaje anterior de cada frame
-  set puntajeAnterior(nuevoPuntaje){
+  set setPuntajeAnterior(nuevoPuntaje){
     this.puntajeAnterior = nuevoPuntaje
   }
 
@@ -49,17 +48,35 @@ export default class Frame{
     }
   }
   
-  obtenerPuntajeActual () {
+  obtenerPuntajeActual() {
     this.lanzamientos.map( lanzamiento => {
-      this.puntajeActual +=  lanzamiento.puntajeActual
+      this.puntajeActual +=  lanzamiento.getPuntajeActual
+  
     }) 
     this.puntajeActual += this.puntajeAnterior
+
   }
 
   // Esta funcion sirve para refrescar el puntaje actual de cada Frame
   actualizarPuntaje(){
     this.puntajeActual = 0
     this.obtenerPuntajeActual()
+  }
+
+  realizarTresLanzamientos(){
+    let puntajeLanzamiento = 0
+    for(let i = 0; i < 3; i++){
+      
+      if(i==2){
+        puntajeLanzamiento = 0
+      }
+  
+      let lanzamiento = new Lanzamiento(puntajeLanzamiento)
+      lanzamiento.asignarPuntajeMenorAVeinte()
+      this.lanzamientos.push(lanzamiento) 
+
+      puntajeLanzamiento = lanzamiento.puntajeActual
+    }
   }
 
 }

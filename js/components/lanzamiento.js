@@ -20,4 +20,10 @@ export default class Lanzamiento {
     
   }
 
+  asignarPuntajeMenorAVeinte() {
+    let limitRandom = 11 - this.puntajeAnterior
+    this.puntajeActual = Math.floor(Math.random() * (limitRandom - 0)) + 0; // 5
+   
+  }
+
 }
