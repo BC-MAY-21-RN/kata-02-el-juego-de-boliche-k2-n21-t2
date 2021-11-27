@@ -2,17 +2,11 @@ import Lanzamiento from "./lanzamiento";
 
 export default class Frame{
   constructor(puntajeAnterior) {
-    // Aqui van las propiedades
     this.lanzamientos = [];
     this.puntajeActual = 0;
     this.puntajeAnterior = puntajeAnterior
 
   }
-  // Aqui van los metodos
-  // Metodo es realizar lanzamiento
-  // Metodo sacar puntaje total
-  // M
-  // El puntaje final es la suma del puntaje anterior mas el puntaje actual
   get getPuntajeFinal() {
     return this.puntajeFinal
   }
@@ -29,9 +23,6 @@ export default class Frame{
     this.puntajeAnterior = nuevoPuntaje
   }
 
-  // Este metodo recibe el puntaje de los dos siguientes lanzamientos
-  // Suma el puntaje de los dos lanzamientos y depues los suma con el
-  // puntaje actual para sacar el nuevo puntaje de la chuza o strike
   newPuntajeConBonus(puntajeAdicional) {
     this.puntajeActual += puntajeAdicional
   }
@@ -57,7 +48,6 @@ export default class Frame{
 
   }
 
-  // Esta funcion sirve para refrescar el puntaje actual de cada Frame
   actualizarPuntaje(){
     this.puntajeActual = 0
     this.obtenerPuntajeActual()
