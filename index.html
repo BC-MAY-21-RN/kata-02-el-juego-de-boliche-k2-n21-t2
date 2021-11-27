@@ -5,10 +5,50 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Juego de boliche</title>
+  <link rel="stylesheet" href="./tabla.css">
 </head>
 <body>
-  <h1>Aqui debemos imprimir el juego, pero primero haremos la logica en consola</h1>
+  <div class="tablaHorizontal">
+    <table id='scorecardTable' class='scorecard' cellpadding='1' cellspacing='0'>
+      <tr>
+        <th colspan='6'>Frame 1</th>
+        <th colspan='6'>Frame 2</th>
+        <th colspan='6'>Frame 3</th>
+        <th colspan='6'>Frame 4</th>
+        <th colspan='6'>Frame 5</th>
+        <th colspan='6'>Frame 6</th>
+        <th colspan='6'>Frame 7</th>
+        <th colspan='6'>Frame 8</th>
+        <th colspan='6'>Frame 9</th>
+        <th colspan='6'>Frame 10</th>
+      </tr>
+      <tr>
+        <td colspan='3'></td><td id="frame1"colspan='3'></td>
+        <td colspan='3'></td><td id="frame2" colspan='3'></td>
+        <td colspan='3'></td><td id="frame3" colspan='3'></td>
+        <td colspan='3'></td><td id="frame4" colspan='3'></td>
+        <td colspan='3'></td><td id="frame5" colspan='3'></td>
+        <td colspan='3'></td><td id="frame6" colspan='3'></td>
+        <td colspan='3'></td><td id="frame7" colspan='3'></td>
+        <td colspan='3'></td><td id="frame8" colspan='3'></td>
+        <td colspan='3'></td><td id="frame9" colspan='3'></td>
+        <td colspan='3'></td><td id="frame10" colspan='3'></td>
+      </tr>
+      <tr>
+        <td colspan='6'id="marker0"></td>
+        <td colspan='6'id="marker1"></td>
+        <td colspan='6'id="marker2"></td>
+        <td colspan='6'id="marker3"></td>
+        <td colspan='6'id="marker4"></td>
+        <td colspan='6'id="marker5"></td>
+        <td colspan='6'id="marker6"></td>
+        <td colspan='6'id="marker7"></td>
+        <td colspan='6'id="marker8"></td>
+        <td colspan='6'id="marker9"></td>
+      </tr>
+    </table>
+  </div>
 
-  <script src="./js/main.js"></script>
+  <script type="text/javascript" src="./js/main.js"></script>
 </body>
 </html>
